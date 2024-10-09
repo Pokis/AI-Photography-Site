@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dirbtinio Intelekto Fotografija</title>
+  <title data-translate="page_title">Dirbtinio Intelekto Fotografija</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -62,17 +62,17 @@
         <a href="index.html" class="logo d-flex align-items-center me-auto">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">AI Fotografija</h1>
+          <h1 data-translate="page_title" class="sitename">AI Fotografija</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Pagrindinis<br></a></li>
-            <li><a href="#about">Apie Mus</a></li>
-            <li><a href="#services">Paslaugos</a></li>
-            <li><a href="#prices">Kainos</a></li>
-            <li><a href="#gallery">Galerija</a></li>
-            <li><a href="#faq">DUK</a></li>
+            <li><a data-translate="main_page_nav" href="#hero" class="active">Pagrindinis<br></a></li>
+            <li><a data-translate="about_us" href="#about">Apie Mus</a></li>
+            <li><a data-translate="services" href="#services">Paslaugos</a></li>
+            <li><a data-translate="prices_nav" href="#prices">Kainos</a></li>
+            <li><a data-translate="gallery" href="#gallery">Galerija</a></li>
+            <li><a data-translate="faq" href="#faq">DUK</a></li>
             <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="#">Dropdown 1</a></li>
@@ -90,7 +90,17 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li> -->
-            <li><a href="#contact">Kontaktai</a></li>
+            <li><a data-translate="contact" href="#contact">Kontaktai</a></li>
+            <li>    
+              <div class="language-switcher">
+              <button onclick="changeLanguage('en')" class="lang-btn">
+                <img src="assets/img/flags/us.svg" alt="English" width="24" height="16"> 
+              </button>
+              <button onclick="changeLanguage('lt')" class="lang-btn">
+                <img src="assets/img/flags/lt.svg" alt="Lithuanian" width="24" height="16"> 
+              </button>
+            </div>
+          </li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -100,7 +110,6 @@
       </div>
 
     </div>
-
   </header>
 
   <main class="main">
@@ -113,19 +122,19 @@
       <div class="container position-relative">
 
         <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
-          <h2 class="hero-header hero-header-background">Sveiki atvykę į AI Fotografiją</h2>
-          <p class="hero-header hero-header-background">Mes kuriame stulbinančius AI generuotus portretus ir vizualus. Peržiūrėkite mūsų paketus žemiau.</p>
+          <h2 data-translate="welcome_message" class="hero-header hero-header-background">Sveiki atvykę į AI Fotografiją</h2>
+          <p data-translate="hero_description" class="hero-header hero-header-background">Mes kuriame stulbinančius AI generuotus portretus ir vizualus. Peržiūrėkite mūsų paketus žemiau.</p>
         </div><!-- End Welcome -->
 
         <div class="content row gy-4">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
-              <h3>Kodėl pasirinkti AI fotografiją?</h3>
-              <p>
+              <h3 data-translate="why_ai_photography_title">Kodėl pasirinkti AI fotografiją?</h3>
+              <p data-translate="why_ai_photography_desc">
                 Mūsų AI sugeneruotos nuotraukos pasižymi išskirtiniu tikroviškumu ir individualizavimu. Užsisakykite profesionalios kokybės vaizdus greitai ir paprastai.
               </p>
               <div class="text-center">
-                <a href="#about" class="more-btn"><span>Sužinoti daugiau</span> <i class="bi bi-chevron-right"></i></a>
+                <a href="#about" class="more-btn"><span data-translate="learn_mode">Sužinoti daugiau</span> <i class="bi bi-chevron-right"></i></a>
               </div>
             </div>
           </div><!-- End Why Box -->
@@ -934,174 +943,8 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- <script>
-  const folderPath = 'assets/img/gallery/domantas_advanced/';
-  const imagePrefix = 'domantas_headshots_';
-  const imageSuffix = '_.png';
-  const minNumber = 0; // Adjust this to your lowest image number
-  const maxNumber = 300; // Adjust this to your highest image number
-  const galleryContainer = document.getElementById('extended-outcome-gallery');
-  const galleryTrainingContainer = document.getElementById('extended-training-gallery');
-
-  // Function to check if an image exists (suppresses console errors)
-  function imageExists(url, callback) {
-    const img = new Image();
-    
-    // Use try-catch to handle any potential issues silently
-    try {
-      img.onload = () => callback(true);
-      img.onerror = () => callback(false);
-      img.src = url;
-    } catch (error) {
-      console.error("Image load error suppressed for URL:", url);
-      callback(false); // Handle the image as non-existent if there is an error
-    }
-  }
-
-  // Loop through a range of possible image numbers
-  for (let i = minNumber; i <= maxNumber; i++) {
-    const imageNumber = String(i).padStart(5, '0'); // Formats as '00001'
-    const imageName = `${imagePrefix}${imageNumber}${imageSuffix}`;
-    const imageUrl = `${folderPath}${imageName}`;
-
-    // Check if the image exists before adding it
-    imageExists(imageUrl, (exists) => {
-      if (exists) {
-        const imageItem = `
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <img src="${imageUrl}" alt="${imageName}" class="img-fluid">
-            </div>
-          </div>
-        `;
-        galleryContainer.innerHTML += imageItem;
-      }
-    });
-  }
-  </script> -->
-  
-  <script>
-    // Function to dynamically load images for different gallery sections
-    function loadGalleryImages(folderPath, imagePrefix, imageSuffix, minNumber, maxNumber, containerId) {
-      const galleryContainer = document.getElementById(containerId);
-  
-      // Function to check if an image exists (suppresses console errors)
-      function imageExists(url, callback) {
-        const img = new Image();
-        
-        // Use try-catch to handle any potential issues silently
-        try {
-          img.onload = () => callback(true);
-          img.onerror = () => callback(false);
-          img.src = url;
-        } catch (error) {
-          console.error("Image load error suppressed for URL:", url);
-          callback(false); // Handle the image as non-existent if there is an error
-        }
-      }
-  
-      // Loop through a range of possible image numbers
-      for (let i = minNumber; i <= maxNumber; i++) {
-        const imageNumber = String(i).padStart(5, '0'); // Formats as '00001'
-        const imageName = `${imagePrefix}${imageNumber}${imageSuffix}`;
-        const imageUrl = `${folderPath}${imageName}`;
-  
-        // Check if the image exists before adding it
-        imageExists(imageUrl, (exists) => {
-          if (exists) {
-            const imageItem = `
-              <div class="col-lg-3 col-md-4">
-                <div class="gallery-item">
-                  <img src="${imageUrl}" alt="${imageName}" class="img-fluid">
-                </div>
-              </div>
-            `;
-            galleryContainer.innerHTML += imageItem;
-          }
-        });
-      }
-    }
-  
-    // Example usage for different blocks:
-  
-    // For the extended package outcome gallery
-    loadGalleryImages(
-      'assets/img/gallery/client_advanced_1/',  // folderPath
-      'client_',                   // imagePrefix
-      '.png',                                 // imageSuffix
-      1,                                       // minNumber
-      56,                                     // maxNumber
-      'extended_client_1'               // containerId
-    );
-  
-    // For the training gallery
-    loadGalleryImages(
-      'assets/img/gallery/client_basic_training_1/',  // folderPath
-      'client_',                   // imagePrefix
-      '.jpg',                                 // imageSuffix
-      1,                                       // minNumber
-      1,                                     // maxNumber
-      'basic_client_1_training'               // containerId
-    );
-
-    loadGalleryImages(
-      'assets/img/gallery/client_basic_1/',  // folderPath
-      'client_',                   // imagePrefix
-      '.png',                                 // imageSuffix
-      1,                                       // minNumber
-      14,                                     // maxNumber
-      'basic_client_1'               // containerId
-    );
-  
-    loadGalleryImages(
-      'assets/img/gallery/client_basic_training_2/',  // folderPath
-      'client_',                   // imagePrefix
-      '.jpg',                                 // imageSuffix
-      1,                                       // minNumber
-      1,                                     // maxNumber
-      'basic_client_2_training'               // containerId
-    );
-
-    loadGalleryImages(
-      'assets/img/gallery/client_basic_2/',  // folderPath
-      'client_',                   // imagePrefix
-      '.png',                                 // imageSuffix
-      1,                                       // minNumber
-      17,                                     // maxNumber
-      'basic_client_2'               // containerId
-    );
-
-    loadGalleryImages(
-      'assets/img/gallery/client_basic_training_3/',  // folderPath
-      'client_',                   // imagePrefix
-      '.jpg',                                 // imageSuffix
-      1,                                       // minNumber
-      1,                                     // maxNumber
-      'basic_client_3_training'               // containerId
-    );
-
-    loadGalleryImages(
-      'assets/img/gallery/client_basic_3/',  // folderPath
-      'client_',                   // imagePrefix
-      '.png',                                 // imageSuffix
-      1,                                       // minNumber
-      16,                                     // maxNumber
-      'basic_client_3'               // containerId
-    );
-
-    loadGalleryImages(
-      'assets/img/gallery/client_custom_1/',  // folderPath
-      'client_',                   // imagePrefix
-      '.png',                                 // imageSuffix
-      1,                                       // minNumber
-      16,                                     // maxNumber
-      'custom_client_1'               // containerId
-    );
-  </script>
-  
-
-
+  <script src="assets/js/imageLoader.js"></script>
+  <script src="assets/js/translations.js"></script>
 </body>
 
 </html>
