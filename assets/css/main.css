@@ -1727,3 +1727,15 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.hero-header {
+  color: #ffffff; /* White color for the text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Black shadow with slight transparency */
+}
+
+/* Optional: Add a semi-transparent background behind the text */
+.hero-header-background {
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  padding: 10px 20px; /* Adds some padding around the text */
+  display: inline-block; /* Makes the background fit the text size */
+}
